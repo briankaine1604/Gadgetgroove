@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    .grad{
+        @apply bg-gradient-to-r from-slate-100 from-10% via-slate-200 via-30% to-slate-300 to-90%
+    }
+
+    input {
+        @apply border border-gray-300
+    }
+    
+}
+
+.shad{
+    box-shadow: 0 2px 5px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+.active-link {
+    background-color: black;
+    color: white;
+}
+
+.customblue{
+    background-color: #002244;
+}
+.glass{
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 2px 5px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
