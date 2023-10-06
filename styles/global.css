@@ -8,8 +8,23 @@
         @apply bg-gradient-to-r from-slate-100 from-10% via-slate-200 via-30% to-slate-300 to-90%
     }
 
+    label{
+        @apply font-bold mt-2 mb-1
+    }
+
+    .btn{
+        @apply bg-black text-white w-20  rounded p-1
+    }
+
     input {
-        @apply border border-gray-300
+        @apply border border-gray-300 rounded outline-none
+    }
+
+    
+    input:focus {
+        border-color: #00c853; /* Change border color on focus */
+        /* border-radius: 1rem;  Change border radius on focus */
+        outline: none; /* Remove the default focus outline (optional) */
     }
     
 }

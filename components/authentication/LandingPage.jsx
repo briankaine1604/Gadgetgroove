@@ -3,6 +3,7 @@ import SignInGoogle from './SignInGoogle'
 import SignInForm from './SignInForm'
 import { useSession, signOut } from 'next-auth/react'
 import HomePage from '@components/HomePage'
+import { ThreeDots } from  'react-loader-spinner'
 
 const LandingPage = () => {
   const{status, data:session}= useSession();
@@ -10,7 +11,23 @@ const LandingPage = () => {
     return(
       <HomePage/>
     )
-  }else{
+  }if (status==='loading') {
+    return(
+      <div className='flex place-items-center'>
+        <ThreeDots 
+        height="80" 
+        width="80" 
+        radius="9"
+        color="#00000" 
+        ariaLabel="three-dots-loading"
+        wrapperStyle={{}}
+        wrapperClassName=""
+        visible={true}
+        />
+      </div>
+    )
+  }  
+  else{
     return (
       <div className='w-auto h-auto grid'>
       <SignInGoogle/>
