@@ -26,6 +26,21 @@
         /* border-radius: 1rem;  Change border radius on focus */
         outline: none; /* Remove the default focus outline (optional) */
     }
+
+    table.basic{
+        @apply w-full border-2 mt-5 border-black
+    }
+    table.basic tr td {
+        @apply border  border-black p-1
+    }
+
+    table.basic thead tr td {
+        @apply bg-slate-400
+    }
+
+    table.basic a{
+        @apply  text-white p-1 rounded px-4 inline-flex
+    }
     
 }
 

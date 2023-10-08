@@ -6,7 +6,9 @@ import mongoose, { Schema,models } from "mongoose";
         description: {type:String, required:false},
         price: {type:Number, required:true}
 
-    })
+    },
+    {timestamps: true,}
+    )
 
 
-    export const Product = mongoose.model('product',productSchema)
+    export const Product =models.Product||mongoose.model('Product',productSchema)
