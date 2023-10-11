@@ -1,6 +1,7 @@
 "use client"
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import UploadButton from "./UploadButton";
 
 export default function ProductsForm({
   id,
@@ -75,6 +76,8 @@ export default function ProductsForm({
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
+
+        <UploadButton/>
         <label htmlFor="">Product Description</label>
         <input
           type="text"
