@@ -1,37 +1,33 @@
+"use client"
 import { CldImage, CldUploadButton } from "next-cloudinary"
 import { useState } from "react"
 
-/*const UploadResult = {
-    info:{
-        public_id:String
-    },
-    event:'success',
-}*/
+const UploadButton = ({imageid,display}) => {
+   
+  
+    return (
+      <main className="rounded mt-3 border flex w-full flex-col">
+        <CldUploadButton
+          onUpload={display}
+          className="w-20 h-7 rounded bg-gray-300"
+          uploadPreset="zp35znzb"
+          
+        />
 
-const UploadButton = () => {
-
-    const [imageid,setImageid]= useState('')
-    
-   const display=(result)=>{setImageid(result.info.public_id)}
-  return (
-    <main className=" rounded mt-3">
-        <CldUploadButton 
-        onUpload={display} 
-        className="w-20 h-7 rounded bg-gray-300"  
-        uploadPreset="zp35znzb" />
-        {
-            imageid &&(
-                <CldImage
-            width="300"
-            height="300"
-            src={imageid}
-            sizes="100vw"
-            alt="Description of my image"
-            />
-            )
-        }
-    </main>
-  )
-}
-
-export default UploadButton
+       <div className="flex flex-wrap">
+       {imageid.map((public_id, index) => (
+          <div className="m-2"><CldImage
+            key={index}
+            src={public_id}
+            alt={`Uploaded Image ${index + 1}`}
+            width="150"
+            height="150"
+            className="flex"
+          /></div>
+        ))}
+       </div>
+      </main>
+    );
+  };
+  
+  export default UploadButton;

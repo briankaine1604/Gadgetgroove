@@ -6,11 +6,13 @@ export async function PUT (req,{params}){
     const {id}= params
     const {newTitle: title, 
         newDescription: description, 
-        newPrice:price}=await req.json();
+        newPrice:price,
+        imageid
+    }=await req.json();
 
         await ConnectMongoDB();
-        await Product.findByIdAndUpdate(id,{title,description,price});
-        console.log({title,description,price})
+        await Product.findByIdAndUpdate(id,{title,description,price,imageid});
+        console.log({title,description,price,imageid})
         return NextResponse.json({message:"Topic Updated"},{status:200})
 }
 

@@ -4,8 +4,8 @@ import mongoose, { Schema,models } from "mongoose";
 
         title: {type:String, required:true},
         description: {type:String, required:false},
-        price: {type:Number, required:true}
-
+        price: {type:Number, required:true},
+        imageid: {type:Array, required:false},
     },
     {timestamps: true,}
     )

@@ -19,12 +19,12 @@ export default async function EditProductPage({params}) {
  
   const {id}= params;
   const {products}=await getTopicbyId(id)
-  const {title,description,price}= products;
+  const {title,description,price,imageid}= products;
   return (
     <div className="w-full h-screen">
       <h1 className='text-xl font-bold'>Edit Product</h1>
       
-        <ProductsForm  id={id} title={title} description={description} price={price} />
+        <ProductsForm  id={id} title={title} description={description} price={price} imageid={imageid} />
       
     </div>
   );
